@@ -25,4 +25,4 @@ CREATE TABLE IF NOT EXISTS rds_demo.app_customer (
     REFERENCES rds_demo.app_address (id),
   CONSTRAINT FK_CUSTOMER_IMAGE_ID
     FOREIGN KEY (customer_image_id)
-    REFERENCES rds_demo.app_customer_image (id));     
+    REFERENCES rds_demo.app_customer_image (id));
