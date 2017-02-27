@@ -6,9 +6,6 @@ import org.springframework.context.annotation.ImportResource;
 
 @Configuration
 @ImportResource("classpath:/aws-config.xml")
-@EnableRdsInstance(databaseName = "${database-name:}", 
-                   dbInstanceIdentifier = "${db-instance-identifier:}", 
-				   password = "${rdsPassword:}")
 public class AwsResourceConfig {
 
 }

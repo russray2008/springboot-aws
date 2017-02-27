@@ -70,6 +70,7 @@ public class CustomerController {
             throw new InvalidCustomerRequestException();
         }
 
+
         Customer customer = customerRepository.findOne(customerId);
 
         if(null==customer){

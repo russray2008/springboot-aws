@@ -1,10 +1,6 @@
 package com.home.aws.rest.boot.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +19,8 @@ public class CustomerImage {
 
     @Id
     @Getter
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="app_customer_image_id_seq")
+    @SequenceGenerator(name="app_customer_image_id_seq", sequenceName="app_customer_image_id_seq", allocationSize =1)
     private long id;
 
     @Setter

@@ -9,10 +9,15 @@
 	   					   http://www.springframework.org/schema/cloud/aws/jdbc	   						   
 						   http://www.springframework.org/schema/cloud/aws/jdbc/spring-cloud-aws-jdbc-1.0.xsd">
 
-  <aws-context:context-credentials>
-     <aws-context:simple-credentials access-key="${accessKey:}" secret-key="${secretKey:}"/>
-  </aws-context:context-credentials> 
-  
+    <aws-context:context-credentials>
+
+      <aws-context:simple-credentials access-key="${ACCESSKey:}" secret-key="${SECRETKey:}"/>
+
+    </aws-context:context-credentials>
+
+    <aws-context:context-region region="us-east-1" />
+    <jdbc:data-source database-name="rds_demo" db-instance-identifier="rds-demo" username="<userName>" password="<Password>" region="us-east-1" />
+
   <aws-context:context-resource-loader/>
 
 </beans>

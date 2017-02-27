@@ -24,7 +24,7 @@ public class FileArchiveService {
 	@Autowired
 	private AmazonS3Client s3Client;
 
-	private static final String S3_BUCKET_NAME = "brians-java-blog-aws-demo";
+	private static final String S3_BUCKET_NAME = "russray2008-java-aws-demo";
 
 
 	/**
@@ -46,7 +46,7 @@ public class FileArchiveService {
 			/* get signed URL (valid for one year) */
 			GeneratePresignedUrlRequest generatePresignedUrlRequest = new GeneratePresignedUrlRequest(S3_BUCKET_NAME, key);
 			generatePresignedUrlRequest.setMethod(HttpMethod.GET);
-			generatePresignedUrlRequest.setExpiration(DateTime.now().plusYears(1).toDate());
+			generatePresignedUrlRequest.setExpiration(DateTime.now().plusDays(7).toDate());
 
 			URL signedUrl = s3Client.generatePresignedUrl(generatePresignedUrlRequest); 
 
